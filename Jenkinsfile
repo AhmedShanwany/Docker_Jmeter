@@ -13,20 +13,16 @@
 				stage ('parallel execution') {
 					stages ('i might have multiple stages'){
 						stage ('stage 1'){
-						echo "Looping"
-						script {
-							for (int i=0; i<=10;i++) {
+							script {
+								for (int i=0; i<=10;i++) {
 								echo "$i"
 							}
 						}
-			
-			
 				}
 			}
+		}
+		}
 		
-		}
-		}
-		}
 		stage('Regular execution'){
 		stages('Docker normal'){
         stage ('Build test Docker') {
@@ -47,6 +43,7 @@
 				}
 			}
         }
+		}
 		}
 		}
 	}
