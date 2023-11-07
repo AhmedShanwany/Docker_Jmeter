@@ -33,7 +33,7 @@
                      }
             }
         }
-		}
+		
       
         stage ('Run Jmeter Docker') {
             steps {
@@ -43,6 +43,7 @@
 				}
 			}
         }
+		}
 		}
 		}
 		}
