@@ -41,7 +41,7 @@
         stage ('Run Jmeter Docker') {
             steps {
 				script{
-                bat 'docker run -t -v D:\\QIQ\\courses\\Run_From_CMD:/data jmeter-docker %Jmeter_Script%'
+                bat 'docker run -t jmeter-docker %Jmeter_Script%'
                 
 				}
 			}
