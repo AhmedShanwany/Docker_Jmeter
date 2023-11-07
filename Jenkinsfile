@@ -13,11 +13,13 @@
 				stage ('parallel execution') {
 					stages ('i might have multiple stages'){
 						stage ('stage 1'){
+						steps{
 							script {
 								for (int i=0; i<=10;i++) {
 								echo "$i"
 							}
 						}
+				}
 				}
 			}
 		}
