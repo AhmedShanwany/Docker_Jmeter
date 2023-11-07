@@ -1,6 +1,6 @@
 SMOKE_RESULTS="result.csv"
 LOG_FILE="log.log"
-	jmeter -n -t opensource-orangehrmlive.jmx \
+	jmeter -n -t $JMETER_SCRIPT \
 	-l /data/$SMOKE_RESULTS -j /data/$LOG_FILE
 	
 
