@@ -8,7 +8,7 @@
                 git branch: 'main', credentialsId: 'CI_bitbucket_with_password', url: 'https://github.com/AhmedShanwany/Docker_Jmeter.git'
             }
         }
-		stage ('parallel') {
+		stage('parallel') {
 			parallel{
 				stage ('parallel execution') {
 					stages ('i might have multiple stages'){
@@ -21,7 +21,7 @@
 				}
 			}
 		}
-		}
+		
 		
 		stage('Regular execution'){
 		stages('Docker normal'){
@@ -43,6 +43,7 @@
 				}
 			}
         }
+		}
 		}
 		}
 		}
