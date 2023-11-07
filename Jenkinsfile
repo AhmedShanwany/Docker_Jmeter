@@ -27,7 +27,7 @@
 		}
 		}
 		}
-		stage(Regular execution){
+		stage('Regular execution'){
 		stages('Docker normal'){
         stage ('Build test Docker') {
             steps {
