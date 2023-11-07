@@ -1,3 +1,4 @@
+JMETER_SCRIPT=$1
 SMOKE_RESULTS="result.csv"
 LOG_FILE="log.log"
 	jmeter -n -t $JMETER_SCRIPT \
