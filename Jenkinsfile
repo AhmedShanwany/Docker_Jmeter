@@ -27,8 +27,8 @@
 		}
 		}
 		}
-		Stage(Regular execution){
-		stages('Docker normal'){}
+		stage(Regular execution){
+		stages('Docker normal'){
         stage ('Build test Docker') {
             steps {
                 script {
@@ -37,6 +37,7 @@
                      }
             }
         }
+		}
       
         stage ('Run Jmeter Docker') {
             steps {
