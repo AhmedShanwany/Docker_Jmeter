@@ -17,6 +17,7 @@
 					if (env.TESTCASE == "Script2"){
 					def SCRIPT_NAME="script_temp.jmx"
 					}
+				prin ${SCRIPT_NAME}
 				}
 			}
 			}
