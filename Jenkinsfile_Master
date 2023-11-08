@@ -8,24 +8,18 @@
                 git branch: 'main', credentialsId: 'CI_bitbucket_with_password', url: 'https://github.com/AhmedShanwany/Docker_Jmeter.git'
             }
         }
-		stage('Set Envirnoment') {
-		steps {
-                script {
-                    if (env.TESTCASE == "Script1"){
-					def SCRIPT_NAME="opensource-orangehrmlive.jmx"
-						}
-					if (env.TESTCASE == "Script2"){
-					def SCRIPT_NAME="script_temp.jmx"
-					}
-				bat 'echo %SCRIPT_NAME%'
-				}
-			}
-			}
 			
 			stage('Start another build'){
                             steps{
-                        build job: 'Docker_Jmeter_Parallel', parameters: [string(name: 'Jmeter_Script', value:${SCRIPT_NAME})]
+							script{
+							if (env.TESTCASE == "Script1"){
+                        build job: 'Docker_Jmeter_Parallel', parameters: [string(name: 'Jmeter_Script', value:'opensource-orangehrmlive.jmx')]
                             }
+							if (env.TESTCASE == "Script2"){
+							build job: 'Docker_Jmeter_Parallel', parameters: [string(name: 'Jmeter_Script', value:'script_temp.jmx')]
+							}
+							}
+							}
                         }
 			
 		}
