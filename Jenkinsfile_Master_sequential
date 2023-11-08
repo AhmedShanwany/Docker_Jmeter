@@ -1,0 +1,23 @@
+ pipeline {
+
+     agent any
+		
+		stages {
+			stage('Clone repo') {
+				steps {
+                git branch: 'main', credentialsId: 'CI_bitbucket_with_password', url: 'https://github.com/AhmedShanwany/Docker_Jmeter.git'
+            }
+        }
+			
+			stage('Start 1st build'){
+                            steps{
+                        build job: 'Docker_Jmeter_Parallel', parameters: [string(name: 'Jmeter_Script', value:'opensource-orangehrmlive.jmx')]
+                            }
+							}
+			stage('Start 2nd build'){
+                            steps{
+                        build job: 'Docker_Jmeter_Parallel', parameters: [string(name: 'Jmeter_Script', value:'script_temp.jmx')]
+                            }
+							}				
+							}
+                        }
