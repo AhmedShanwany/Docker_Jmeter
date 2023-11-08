@@ -12,10 +12,10 @@
 		steps {
                 script {
                     if (env.TESTCASE == "Script1"){
-					SCRIPT_NAME="opensource-orangehrmlive.jmx"
+					def SCRIPT_NAME="opensource-orangehrmlive.jmx"
 						}
 					if (env.TESTCASE == "Script2"){
-					SCRIPT_NAME="script_temp.jmx"
+					def SCRIPT_NAME="script_temp.jmx"
 					}
 				}
 			}
@@ -23,7 +23,7 @@
 			
 			stage('Start another build'){
                             steps{
-                        build job: 'Docker_Jmeter_Parallel', parameters: [string(name: 'Jmeter_Script', value:%SCRIPT_NAME%)]
+                        build job: 'Docker_Jmeter_Parallel', parameters: [string(name: 'Jmeter_Script', value:${SCRIPT_NAME})]
                             }
                         }
 			
