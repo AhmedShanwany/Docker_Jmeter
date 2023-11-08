@@ -3,10 +3,13 @@
      agent any
 		
 		stages {
-			stage('Clone repo') {
+			stage('Clone repo and setup') {
 				steps {
                 git branch: 'main', credentialsId: 'CI_bitbucket_with_password', url: 'https://github.com/AhmedShanwany/Docker_Jmeter.git'
-            }
+				script{
+                    currentBuild.displayName = env.Jmeter_Script
+                }
+			}
         }
 		stage('parallel') {
 			parallel{
