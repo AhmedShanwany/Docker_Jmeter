@@ -17,7 +17,7 @@
 					if (env.TESTCASE == "Script2"){
 					def SCRIPT_NAME="script_temp.jmx"
 					}
-				print SCRIPT_NAME
+				bat 'echo %SCRIPT_NAME%'
 				}
 			}
 			}
